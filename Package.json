@@ -5,8 +5,16 @@
         "morgan": "^1.10.1"
     },
     "devDependencies": {
+        "browser-sync": "^3.0.4",
         "chai": "^6.2.2",
         "chai-http": "^5.1.2",
-        "mocha": "^11.7.5"
+        "mocha": "^11.7.5",
+        "nodemon": "^3.1.11"
+    },
+    "scripts": {
+        "start": "node Server/index.js",
+        "dev": "nodemon Server/index.js",
+        "test": "mocha --recursive",
+        "sync": "nodemon Server/index.js --watch Server --watch public"
     }
 }

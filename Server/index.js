@@ -1,6 +1,13 @@
-const server = require("./app");
+const http = require('http');
 
-// listen for incoming connections
-server.listen(3000, () => {
-    console.log("Server is running on http://localhost:3000");
+const PORT = 8080;
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+
+    res.end("Hello, World!");
+});
+
+server.listen(PORT, () => {
+    console.log(`Server is listening on http://localhost:${PORT}/`);
 });
